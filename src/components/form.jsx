@@ -29,13 +29,16 @@ const Form = () => {
       <TextField name="name" {...register("name")}></TextField>
       <p>{errors.name?.message}</p>
       <FormLabel htmlFor="age">Enter Age</FormLabel>
-      <TextField name="age" {...register("age")}></TextField>
-      <p>{errors.age?.message}</p>
+      <TextField
+        name="age"
+        {...register("age")}
+        // fullWidth      //takes full width of parent container
+        margin="dense"
+        helperText={errors?.age?.message}
+      ></TextField>
+      {/* <p>{errors.age?.message}</p> */}
 
-      <Button
-        variant="outlined"
-        color='primary'
-      >
+      <Button variant="outlined" color="primary">
         Submit
       </Button>
     </FormControl>
